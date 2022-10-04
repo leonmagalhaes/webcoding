@@ -175,7 +175,12 @@ body {
 <h2>Cadastre-se</h2>
 <p>Por favor, preencha esse formulário.</p>
 <hr>
-<div class="form-group">
+<label for="tipo_usuario">Escolha</label>
+<select>
+	<option value="al">Aluno</option>
+	<option value="em">Empresa</option>
+</select><br>
+<div class="form-group" style="padding-top: 0.75cm;">
 <div class="input-group">
 <span class="input-group-addon"><i class="fa fa-user"></i></span>
 <input type="text" class="form-control" name="username" placeholder="Nome de usuário" required="required">
@@ -197,7 +202,6 @@ body {
 <div class="input-group">
 <span class="input-group-addon">
 <i class="fa fa-lock"></i>
-<i class="fa fa-check"></i>
 </span>
 <input type="password" class="form-control" name="confirm_password" placeholder="Confirme a senha" required="required">
 </div>
