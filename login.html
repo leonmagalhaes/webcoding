@@ -95,47 +95,104 @@
 <body>
 
   <main class="form-signin w-100 m-auto text-center">
+    <!-- Botao p/ alterar entre aluno e empresa -->
+    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist" style="padding-bottom: 45px; ">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="tab-aluno" data-mdb-toggle="pill" href="#pills-aluno" role="tab"
+          aria-controls="pills-aluno" aria-selected="true">Aluno</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tab-empresa" data-mdb-toggle="pill" href="#pills-empresa" role="tab"
+          aria-controls="pills-empresa" aria-selected="false">Empresa</a>
+      </li>
+    </ul>        
+    <!--Formulario aluno-->
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="pills-aluno" role="tabpanel" aria-labelledby="tab-aluno">
 
+        <!--Inicio do formulario -->
+        <form >
 
-    <!--Inicio do formulario -->
-     <form >
+          <a class="fa fa-book" href="index.html" style="font-size:36px;color:#06BBCC"> Digital Solutions</a>
+          <!-- Texto central -->
+          <h1 class="h3 mb-3 fw-normal"><br>Entre na sua conta</h1>
+        
+          <!-- entrada de email -->
+          <div class="form-floating">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email</label>
+          </div>
 
-      <a class="fa fa-book" href="index.html" style="font-size:36px;color:#06BBCC"> Digital Solutions</a>
-	    <!-- Texto central -->
-      <h1 class="h3 mb-3 fw-normal"><br>Entre na sua conta</h1>
-    
-  	  <!-- entrada de email -->
-      <div class="form-floating">
-           <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-           <label for="floatingInput">Email</label>
+          <!-- entrada de senha -->
+          <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Senha</label>
+            </div>
+            
+            <!--caixa de lembrar-me -->
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Lembrar-me
+              </label>
+            </div>
+
+            <!-- botao de entrar -->
+            
+            
+            <div class="d-grid gap-2 col-6 mx-auto" role="group">
+    <!--            <button class="w-100 btn btn-lg btn-primary" type="submit" href="empresa.html">Entrar</button>-->
+                  <a href="index.html" class="w-100 btn btn-lg btn-primary" type="submit">Entrar</a>   
+            </div>
+
+      <br> <a href="signup.html">Ainda não tem uma conta? Clique aqui.</a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+
+            
+        </form>
       </div>
+      <div class="tab-pane fade" id="pills-empresa" role="tabpanel" aria-labelledby="tab-empresa">
+                <!--Inicio do formulario -->
+                <form >
 
-      <!-- entrada de senha -->
-      <div class="form-floating">
-           <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-           <label for="floatingPassword">Senha</label>
-         </div>
-         
-         <!--caixa de lembrar-me -->
-         <div class="checkbox mb-3">
-           <label>
-             <input type="checkbox" value="remember-me"> Lembrar-me
-           </label>
-         </div>
-
-         <!-- botao de entrar -->
-         
-         
-         <div class="d-grid gap-2 col-6 mx-auto" role="group">
-<!--            <button class="w-100 btn btn-lg btn-primary" type="submit" href="empresa.html">Entrar</button>-->
-              <a href="empresa.html" class="w-100 btn btn-lg btn-primary" type="submit">Entrar</a>   
-         </div>
-
-	<br> <a href="signup.html">Ainda não tem uma conta? Clique aqui.</a>
-         <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
-
-         
-    </form>
+                  <a class="fa fa-book" href="index.html" style="font-size:36px;color:#06BBCC"> Digital Solutions</a>
+                  <!-- Texto central -->
+                  <h1 class="h3 mb-3 fw-normal"><br>Entre na sua conta</h1>
+                
+                  <!-- entrada de email -->
+                  <div class="form-floating">
+                      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                      <label for="floatingInput">Email</label>
+                  </div>
+        
+                  <!-- entrada de senha -->
+                  <div class="form-floating">
+                      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                      <label for="floatingPassword">Senha</label>
+                    </div>
+                    
+                    <!--caixa de lembrar-me -->
+                    <div class="checkbox mb-3">
+                      <label>
+                        <input type="checkbox" value="remember-me"> Lembrar-me
+                      </label>
+                    </div>
+        
+                    <!-- botao de entrar -->
+                    
+                    
+                    <div class="d-grid gap-2 col-6 mx-auto" role="group">
+            <!--            <button class="w-100 btn btn-lg btn-primary" type="submit" href="empresa.html">Entrar</button>-->
+                          <a href="empresa.html" class="w-100 btn btn-lg btn-primary" type="submit">Entrar</a>   
+                    </div>
+        
+              <br> <a href="signup.html">Ainda não tem uma conta? Clique aqui.</a>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+        
+                    
+                </form>
+        
+      </div>  
+    </div>      
   </main>
   
 
