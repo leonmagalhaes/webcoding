@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Digital Solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+    body{
+        margin-top:20px;
+        color: #9b9ca1;
+    }
+    .bg-secondary-soft {
+        background-color: rgba(208, 212, 217, 0.1) !important;
+    }
+    .rounded {
+        border-radius: 5px !important;
+    }
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    .px-4 {
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+    .file-upload .square {
+        height: 250px;
+        width: 250px;
+        margin: auto;
+        vertical-align: middle;
+        border: 1px solid #e5dfe4;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+    .text-secondary {
+        --bs-text-opacity: 1;
+        color: rgba(208, 212, 217, 0.5) !important;
+    }
+    .btn-success-soft {
+        color: #28a745;
+        background-color: rgba(40, 167, 69, 0.1);
+    }
+    .btn-danger-soft {
+        color: #dc3545;
+        background-color: rgba(220, 53, 69, 0.1);
+    }
+    .form-control {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: #29292e;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #e5dfe4;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 5px;
+        -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    }
+    </style>
+
+<body>
+    
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Carregando...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+            <a class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Digital Solutions</h2>
+            </a>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <a href="empresa.html" class="nav-item nav-link ">Inicio</a>
+                    <a href="about.html" class="nav-item nav-link active">Perfil</a>
+    <!--            <a href="courses.html" class="nav-item nav-link">Cursos</a>-->
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Vagas</a>
+                        <div class="dropdown-menu fade-down m-0">
+                            <a href="team.html" class="dropdown-item">Cadastrar Vaga</a>
+                            <a href="testimonial.html" class="dropdown-item">Minhas Vagas</a>
+                       <!-- <a href="404.html" class="dropdown-item">404 Page</a> --> 
+                        </div>
+                    </div>
+    <!--            <a href="contact.html" class="nav-item nav-link">Contato</a> -->
+                </div>
+                <a href="index.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Sair</a>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+
+        
+        
+
+        <div class="container">
+        <div class="row">
+                <div class="col-12">
+                    <!-- Page title -->
+                    <div class="my-5">
+                        <h3>Meu Perfil</h3>
+                        <hr>
+                    </div>
+                    <!-- Form START -->
+                    <form class="file-upload">
+                        <div class="row mb-5 gx-5">
+                            <!-- Contatos -->
+                            <div class="col-xxl-8 mb-5 mb-xxl-0">
+                                <div class="bg-secondary-soft px-4 py-5 rounded">
+                                    <div class="row g-3">
+                                        <h4 class="mb-4 mt-0">Editar Perfil</h4>
+                                        <!-- Nome da Empresa -->
+                                        <div class="col-md-6">
+                                            <label class="form-label">Nome da Empresa *</label>
+                                            <input type="text" class="form-control" placeholder="" aria-label="Nome empresa" value="">
+                                        </div>
+                                        <!-- Telefone -->
+                                        <div class="col-md-6">
+                                            <label class="form-label">Telefone *</label>
+                                            <input type="tel" class="form-control" placeholder="" aria-label="Phone number" value="">
+                                        </div>
+                                        <!-- Endereço -->
+                                        <div class="col-md-6">
+                                            <label class="form-label">Endereço *</label>
+                                            <input type="text" class="form-control" placeholder="" aria-label="Endereco" value="">
+                                        </div>
+                                        <!-- Email -->
+                                        <div class="col-md-6">
+                                            <label for="inputEmail4" class="form-label">Email *</label>
+                                            <input type="email" class="form-control" id="inputEmail4" value="">
+                                        </div>
+                                    </div> <!-- Row END -->
+                                </div>
+                            </div>
+                            <!-- Upload profile -->
+                            <div class="col-xxl-4">
+                                <div class="bg-secondary-soft px-4 py-5 rounded">
+                                    <div class="row g-3">
+                                        <h4 class="mb-4 mt-0">Mude a sua logo</h4>
+                                        <div class="text-center">
+                                            <!-- Image upload -->
+                                            <div class="square position-relative display-2 mb-3">
+                                                <i class="fas fa-fw fa-user position-absolute top-50 start-50 translate-middle text-secondary"></i>
+                                            </div>
+                                            <!-- Button -->
+                                            <input type="file" id="customFile" name="file" hidden="">
+                                            <label class="btn btn-success-soft btn-block" for="customFile">Upload</label>
+                                            <button type="button" class="btn btn-danger-soft">Remover</button>
+                                            <!-- Content -->
+                                            <p class="text-muted mt-3 mb-0"><span class="me-1">Nota:</span>Tamanho mínimo 300px x 300px</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Row END -->
+        
+                        <!-- Social media detail -->
+                        <div class="row mb-5 gx-5">
+                            <div class="col-xxl-6 mb-5 mb-xxl-0">
+                                <div class="bg-secondary-soft px-4 py-5 rounded">
+                                    <div class="row g-3">
+                                        <!-- Facebook -->
+                                        <div class="col-md-6">
+                                            <label class="form-label"><i class="fab fa-fw fa-facebook me-2 text-facebook"></i>Facebook *</label>
+                                            <input type="text" class="form-control" placeholder="" aria-label="Facebook" value="">
+                                        </div>
+                                        <!-- Twitter -->
+                                        <div class="col-md-6">
+                                            <label class="form-label"><i class="fab fa-fw fa-twitter text-twitter me-2"></i>Twitter *</label>
+                                            <input type="text" class="form-control" placeholder="" aria-label="Twitter" value="">
+                                        </div>
+                                        <!-- Site -->
+                                        <div class="col-md-6">
+                                            <label class="form-label"><i class="bi bi-globe"></i>Site *</label>
+                                            <input type="url" class="form-control" placeholder="" aria-label="Site" value="">
+                                        </div>
+                                        <!-- Instragram -->
+                                        <div class="col-md-6">
+                                            <label class="form-label"><i class="fab fa-fw fa-instagram text-instagram me-2"></i>Instagram *</label>
+                                            <input type="text" class="form-control" placeholder="" aria-label="Instragram" value="">
+                                        </div>
+                                    </div> <!-- Row END -->
+                                </div>
+                            </div>
+        
+                            <!-- change password -->
+                            <div class="col-xxl-6">
+                                <div class="bg-secondary-soft px-4 py-5 rounded">
+                                    <div class="row g-3">
+                                        <h4 class="my-4">Mudar Senha</h4>
+                                        <!-- Old password -->
+                                        <div class="col-md-6">
+                                            <label for="exampleInputPassword1" class="form-label">Senha Antiga *</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1">
+                                        </div>
+                                        <!-- New password -->
+                                        <div class="col-md-6">
+                                            <label for="exampleInputPassword2" class="form-label">Senha Nova *</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword2">
+                                        </div>
+                                        <!-- Confirm password -->
+                                        <div class="col-md-12">
+                                            <label for="exampleInputPassword3" class="form-label">Confirmar Senha *</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword3">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Row END -->
+                        <!-- button -->
+                        <div class="gap-3 d-md-flex justify-content-md-end text-center">
+                            <button type="button" class="btn btn-danger btn-lg">Deletar perfil</button>
+                            <button type="button" class="btn btn-primary btn-lg">Atualizar perfil</button>
+                        </div>
+                    </form> <!-- Form END -->
+                </div>
+            </div>
+            </div>        
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+           <!-- <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a>
+                </div> -->
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Contato</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i> R. Guilherme Pinto, 114 - Graças, Recife - PE</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+55 (81) 3413-4611</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://github.com/leonmagalhaes/webcoding"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Galeria</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Digital Solutions</a>, Todos Direitos Reservados.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
+                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->       
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
