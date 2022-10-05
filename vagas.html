@@ -118,8 +118,23 @@
     </nav><br><br><br>
     <!-- Navbar End -->
 
+    <!-- Seach Bar Start-->
+    <div class="container dataTables_filter" >
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group" id="adv-search">
+                    <input type="text" class="form-control" id="tabela_filter" placeholder="Pesquisar" />
+                    <div class="input-group-btn">
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Seach Bar End-->
+
     <!-- Table Start-->
-    <table id="tabela" class="table table-striped table bordered" style="width: 100%;">
+    <table id="tabela_vaga" class="table table-striped table bordered" style="width: 100%;">
         <thead>
             <tr>
                 <th>Vaga</th>
@@ -129,7 +144,7 @@
             </tr>
         </thead>
 
-        <tbody id="minha_tabela">
+        <tbody id="minha_vaga">
             <tr>
                 <td>Dev Senior</td>
                 <td>10</td>
@@ -223,7 +238,20 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>    
+    <script src="js/main.js"></script>
+    
+    <!-- JS Script-->
+    <script>
+        $(document).ready(function(){
+            $("#tabela_filter").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#minha_vaga tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+            
 </body>
 
 </html>
