@@ -245,13 +245,13 @@ body {
 		xhttp.onload = function(){
 			document.getElementById("demo").innerHTML = "Dados Cadastrados";
 		}
-		xhttp.open("POST", "http://localhost:8080/cadastrar");
+		xhttp.open("POST", "http://localhost:8080/aluno");
 		xhttp.setRequestHeader("Content-Type", "application/json");
 		xhttp.send(
 			JSON.stringify(
 				{
 					emailaluno: document.getElementById("email").value,
-					username: document.getElementById("username").value,
+					useraluno: document.getElementById("username").value,
 					senhaaluno: document.getElementById("password").value
 				}
 			)
@@ -259,7 +259,21 @@ body {
 	}
 
 	function cadastro_empresa(){
-		alert("eu sou empresa")
+		const xhttp = new XMLHttpRequest();
+		xhttp.onload = function(){
+			document.getElementById("demo").innerHTML = "Dados Cadastrados";
+		}
+		xhttp.open("POST", "http://localhost:8080/empresa");
+		xhttp.setRequestHeader("Content-Type", "application/json");
+		xhttp.send(
+			JSON.stringify(
+				{
+					emailempresa: document.getElementById("email").value,
+					userempresa: document.getElementById("username").value,
+					senhaempresa: document.getElementById("password").value
+				}
+			)
+		);
 	}
 
 
