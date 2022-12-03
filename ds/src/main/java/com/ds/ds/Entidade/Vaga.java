@@ -14,6 +14,9 @@ public class Vaga {
     private Long id;
 
     @Column(nullable = false)
+    private int nvagas; //numero de vagas  
+
+    @Column(nullable = false)
     private String cargo;
 
     @Column(nullable = false)
@@ -53,6 +56,14 @@ public class Vaga {
 
     public void setLink_form(String link_form) {
         this.link_form = link_form;
+    }
+
+    public int getNvagas() {
+        return nvagas;
+    }
+
+    public void setNvagas(int nvagas) {
+        this.nvagas = nvagas;
     }
     
 }

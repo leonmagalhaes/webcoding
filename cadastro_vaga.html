@@ -171,25 +171,26 @@ body {
         <!-- Navbar End -->
 
 <div class="signup-form">
-<form action="/examples/actions/confirmation.php" method="post">
+<form action="/ds/src/main/java/com/ds/ds/Entidade/Vaga.java" method="post">
 <h2>Cadastro de Vaga</h2>
 <hr>
 <div class="form-group">
-<input type="text" class="form-control" name="cargo" placeholder="Cargo" required="required">
+<input type="text" class="form-control" name="cargo" id="cargo" placeholder="Cargo" required="required">
 </div>
 <div class="form-group">
-<input type="text" class="form-control" name="vagas" placeholder="Quantidade de vagas" required="required">
+<input type="text" class="form-control" name="nvagas" id="nvagas" placeholder="Quantidade de vagas" required="required">
 </div>
 <div class="form-group">
 <input type="text" class="form-control" name="local" placeholder="local" required="required">
 </div>
 <div class="form-group">
-<input type="text" class="form-control" name="link" placeholder="Link p/ formulario" required="required">
+<input type="text" class="form-control" name="link_form" id="link_form" placeholder="Link p/ formulario" required="required">
 </div>
 <div class="form-group">
 <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
 </div>
 </form>
+<div id="demo"></div>
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -204,5 +205,25 @@ body {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 </div>
+<script>
+	function cadastra_vaga(){
+		const xhttp = new XMLHttpRequest();
+		xhttp.onload = function(){
+			document.getElementById("demo").innerHTML = "Vaga Cadastrada";
+		}
+		xhttp.open("POST", "http://localhost:8080/vaga");
+		xhttp.setRequestHeader("Content-Type", "application/json");
+		xhttp.send(
+			JSON.stringify(
+				{
+					cargo: document.getElementById("cargo").value,
+					nvagas: document.getElementById("nvagas").value,
+					local: document.getElementById("local").value,
+					link_form: document.getElementById("link_form").value
+				}
+			)
+		);
+	}		
+</script>
 </body>
 </html>

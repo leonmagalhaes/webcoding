@@ -112,6 +112,7 @@
         
                     
                 </form>
+                <div id="demo"></div>
     </div>    
   </div>  
 </div>  
@@ -119,6 +120,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
 <script>
   function valida_aluno(){
+    
     var emailaluno = document.getElementById("emailaluno");
     var senhaaluno = document.getElementById("senhaaluno");
     var erro_aluno = document.getElementById("erro_aluno");
@@ -130,10 +132,26 @@
       return false;
     }
     else{
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function(){
+        document.getElementById("demo").innerHTML = "Login Feito!"
+      }
+      xhttp.open("POST", "http://localhost:8080/aluno");
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send(
+          JSON.stringify(
+            {
+              emailaluno: document.getElementById("emailaluno").value,
+              senhaaluno: document.getElementById("senhaaluno").value
+            }
+          )
+      ) 
       window.location = "aluno.html";
       return true
     }
   }
+
 </script>
 </body>  
 </html>  

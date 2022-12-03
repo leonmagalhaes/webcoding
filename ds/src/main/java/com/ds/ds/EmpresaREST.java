@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ds.ds.Entidade.Empresa;
 import com.ds.ds.database.RepositorioEmpresa;
 
-@Controller
+@RestController
 @RequestMapping("/empresa")
 public class EmpresaREST {
     
