@@ -136,31 +136,6 @@
     <!-- Seach Bar End-->
 
     <!-- Table Start-->
-    <table id="tabela" class="table table-striped table bordered" style="width: 100%;">
-        <thead>
-            <tr>
-                <th>Vaga</th>
-                <th>N° de Vagas</th>
-                <th>Local</th>
-                <th>Link P/ Vaga</th>
-            </tr>
-        </thead>
-
-        <tbody id="minha_tabela">
-            <tr>
-                <td>Dev Senior</td>
-                <td>10</td>
-                <td>Ibura, Recife, PE</td>
-                <td>www.blablabla.com</td>
-            </tr>
-            <tr>
-                <td>Dev Full-Stack Front End</td>
-                <td>20</td>
-                <td>Ilha do Rato, Recife, PE</td>
-                <td>www.formulario.com</td>
-            </tr>
-        </tbody>
-    </table>
 
 
     <!-- Footer Start -->
@@ -255,6 +230,41 @@
             });
         });
         });
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            const obj = JSON.parse(this.responseText);
+            listaVagas = obj;
+
+            var tabela = '';
+            tabela = tabela + '<table class = "table">';
+            tabela = tabela + '<thead>';
+            tabela = tabela + '<tr>';
+            tabela = tabela + '<th>id<th>';   
+            tabela = tabela + '<th>cargo<th>';
+            tabela = tabela + '<th>nvagas<th>';
+            tabela = tabela + '<th>local<th>';
+            tabela = tabela + '<th>linkform<th>';
+            tabela = tabela + '</tr>';
+            tabela = tabela + '</thead>';
+            tabela = tabela + '<tbody id="minha_tabela">';
+            for (let index = 0; index < obj.length; index++) {
+                const element = obj[index];
+                tabela = tabela + '<tr>';
+                tabela = tabela + '<td>'+element.id+'</td>';
+                tabela = tabela + '<td>'+element.cargo+'</td>';
+                tabela = tabela + '<td>'+element.nvagas+'</td>';
+                tabela = tabela + '<td>'+element.local+'</td>';
+                tabela = tabela + '<td>'+element.linkform+'</td>';
+                tabela = tabela + '<button type = "button" class = "btn btn-primary" href="#">Pagina da vaga</button>';
+                tabela = tabela + '</tr>';
+            }
+
+            tabela = tabela + '</tbody>';
+            tabela = tabela + '</table>';
+        }
+        xhttp.open("GET","http://localhost:8080/vaga/listavaga");
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.send();
     </script>
 </body>
 

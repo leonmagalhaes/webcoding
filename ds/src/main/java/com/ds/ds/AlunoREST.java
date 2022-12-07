@@ -21,23 +21,23 @@ public class AlunoREST {
     @Autowired
     private RepositorioAluno raluno;
 
-    @GetMapping
+    @GetMapping("/listar")
     public List<Aluno>listar(){
         return raluno.findAll();
     }
 
-    @PostMapping
-    public void salvar(@RequestBody Aluno aluno){
+    @PostMapping("/cadastrar")
+    public void cadastrar(@RequestBody Aluno aluno){
         raluno.save(aluno);
     }
 
-    @PutMapping
+    @PutMapping("/alterar")
     public void alterar(@RequestBody Aluno aluno){
         if(aluno.getEmailaluno() != " " || aluno.getEmailaluno() != null)
             raluno.save(aluno);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/excluir")
     public void excluir(@RequestBody Aluno aluno){
         raluno.delete(aluno);
     }

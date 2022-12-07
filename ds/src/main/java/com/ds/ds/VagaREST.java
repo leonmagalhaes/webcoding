@@ -21,12 +21,12 @@ public class VagaREST {
     @Autowired
     private RepositorioVaga rvaga;
 
-    @GetMapping
+    @GetMapping("/listavaga")
     public List<Vaga>lista_vaga(){
         return rvaga.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/salvavaga")
     public void salva_vaga(@RequestBody Vaga vaga){
         rvaga.save(vaga);
     }

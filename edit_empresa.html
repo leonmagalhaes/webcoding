@@ -152,22 +152,22 @@
                                         <!-- Nome da Empresa -->
                                         <div class="col-md-6">
                                             <label class="form-label">Nome da Empresa *</label>
-                                            <input type="text" class="form-control" placeholder="" aria-label="Nome empresa" value="">
+                                            <input type="text" id="userempresa" name="userempresa" class="form-control" placeholder="" aria-label="Nome empresa" value="">
                                         </div>
                                         <!-- Telefone -->
                                         <div class="col-md-6">
                                             <label class="form-label">Telefone *</label>
-                                            <input type="tel" class="form-control" placeholder="" aria-label="Phone number" value="">
+                                            <input type="tel" id="telefone_empresa" name="telefone_empresa" class="form-control" placeholder="" aria-label="Phone number" value="">
                                         </div>
                                         <!-- Endereço -->
                                         <div class="col-md-6">
                                             <label class="form-label">Endereço *</label>
-                                            <input type="text" class="form-control" placeholder="" aria-label="Endereco" value="">
+                                            <input type="text" id="endereco_empresa" name="endereco_empresa" class="form-control" placeholder="" aria-label="Endereco" value="">
                                         </div>
                                         <!-- Email -->
                                         <div class="col-md-6">
                                             <label for="inputEmail4" class="form-label">Email *</label>
-                                            <input type="email" class="form-control" id="inputEmail4" value="">
+                                            <input type="email" class="form-control" id="emailempresa" name="emailempresa" value="">
                                         </div>
                                     </div> <!-- Row END -->
                                 </div>
@@ -202,22 +202,22 @@
                                         <!-- Facebook -->
                                         <div class="col-md-6">
                                             <label class="form-label"><i class="fab fa-fw fa-facebook me-2 text-facebook"></i>Facebook *</label>
-                                            <input type="text" class="form-control" placeholder="" aria-label="Facebook" value="">
+                                            <input type="text" id="face_empresa" name="face_empresa" class="form-control" placeholder="" aria-label="Facebook" value="">
                                         </div>
                                         <!-- Twitter -->
                                         <div class="col-md-6">
                                             <label class="form-label"><i class="fab fa-fw fa-twitter text-twitter me-2"></i>Twitter *</label>
-                                            <input type="text" class="form-control" placeholder="" aria-label="Twitter" value="">
+                                            <input type="text" id="twitter_empresa" name="twitter_empresa" class="form-control" placeholder="" aria-label="Twitter" value="">
                                         </div>
                                         <!-- Site -->
                                         <div class="col-md-6">
                                             <label class="form-label"><i class="bi bi-globe"></i>Site *</label>
-                                            <input type="url" class="form-control" placeholder="" aria-label="Site" value="">
+                                            <input type="url" id="site_empresa" name="site_empresa" class="form-control" placeholder="" aria-label="Site" value="">
                                         </div>
                                         <!-- Instragram -->
                                         <div class="col-md-6">
                                             <label class="form-label"><i class="fab fa-fw fa-instagram text-instagram me-2"></i>Instagram *</label>
-                                            <input type="text" class="form-control" placeholder="" aria-label="Instragram" value="">
+                                            <input type="text" id="insta_empresa" name="insta_empresa" class="form-control" placeholder="" aria-label="Instragram" value="">
                                         </div>
                                     </div> <!-- Row END -->
                                 </div>
@@ -228,20 +228,15 @@
                                 <div class="bg-secondary-soft px-4 py-5 rounded">
                                     <div class="row g-3">
                                         <h4 class="my-4">Mudar Senha</h4>
-                                        <!-- Old password -->
-                                        <div class="col-md-6">
-                                            <label for="exampleInputPassword1" class="form-label">Senha Antiga *</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1">
-                                        </div>
                                         <!-- New password -->
                                         <div class="col-md-6">
                                             <label for="exampleInputPassword2" class="form-label">Senha Nova *</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword2">
+                                            <input type="password" class="form-control" id="senhaempresa" name="senhaempresa">
                                         </div>
                                         <!-- Confirm password -->
                                         <div class="col-md-12">
                                             <label for="exampleInputPassword3" class="form-label">Confirmar Senha *</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword3">
+                                            <input type="password" class="form-control" id="senharepete">
                                         </div>
                                     </div>
                                 </div>
@@ -249,8 +244,8 @@
                         </div> <!-- Row END -->
                         <!-- button -->
                         <div class="gap-3 d-md-flex justify-content-md-end text-center">
-                            <button type="button" class="btn btn-danger btn-lg">Deletar perfil</button>
-                            <button type="button" class="btn btn-primary btn-lg">Atualizar perfil</button>
+                            <button type="button" class="btn btn-danger btn-lg" onclick="deleta(emailempresa)">Deletar perfil</button>
+                            <button type="button" class="btn btn-primary btn-lg" onclick="">Atualizar perfil</button>
                         </div>
                     </form> <!-- Form END -->
                 </div>
@@ -336,6 +331,60 @@
         
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        function deleta(emailempresa){
+            const xhttp = new XMLHttpRequest();
+            xhttp.open("DELETE","http://localhost:8080/empresa/excluir"+emailempresa);
+            xhttp.setRequestHeader("Content-Type", "application/json");
+            xhttp.send();
+            window.location.replace("http://127.0.0.1:5500/index.html")
+        }
+
+        function atualiza(){
+            var senha = document.getElementById('senhaempresa').value;
+            var senharepete = document.getElementById('senharepete').value;
+            if(senha == senharepete){
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("PUT", "http://localhost:8080/empresa/alterar");
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send(
+                    JSON.stringify(
+                        {
+                            emailempresa:document.getElementById('emailempresa').value,
+                            senhaempresa: senha,
+                            userempresa:document.getElementById('userempresa').value,
+                            telefone_empresa:document.getElementById('telefone_empresa').value,
+                            face_empresa:document.getElementById('face_empresa').value,
+                            twitter_empresa:document.getElementById('twitter_empresa').value,
+                            insta_empresa:document.getElementById('insta_empresa').value,
+                            site_empresa:document.getElementById('site_empresa').value,
+                        }
+                    )
+                )
+            }
+            else if(senha != senharepete){
+                window.alert("Confimação da senha invalida!");
+            }
+            else if(senha == ''){
+                const xhttp = new XMLHttpRequest();
+                xhttp.open("PUT", "http://localhost:8080/empresa/alterar");
+                xhttp.setRequestHeader("Content-Type", "application/json");
+                xhttp.send(
+                    JSON.stringify(
+                        {
+                            emailempresa:document.getElementById('emailempresa').value,
+                            userempresa:document.getElementById('userempresa').value,
+                            telefone_empresa:document.getElementById('telefone_empresa').value,
+                            face_empresa:document.getElementById('face_empresa').value,
+                            twitter_empresa:document.getElementById('twitter_empresa').value,
+                            insta_empresa:document.getElementById('insta_empresa').value,
+                            site_empresa:document.getElementById('site_empresa').value,
+                        }
+                    )
+                )
+            }
+        }
+    </script>
 </body>
 
 </html>
