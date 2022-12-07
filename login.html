@@ -104,7 +104,7 @@
                     
                     <div class="d-grid gap-2 col-6 mx-auto" role="group">
                       <span class="error_msg" style="color: red; display:none;" id="erro_empresa">Email ou senha incorretos!</span><br>
-                      <a href="empresa.html" class="w-100 btn btn-lg btn-primary" type="submit">Entrar</a>   
+                      <a href="empresa.html" class="w-100 btn btn-lg btn-primary" onclick="valida_empresa()" type="submit">Entrar</a>   
                     </div>
         
               <br> <a href="signup.html">Ainda não tem uma conta? Clique aqui.</a>
@@ -131,6 +131,9 @@
       senhaaluno.style.border = "1px solid #f74040"
       return false;
     }
+    else if(emailaluno=='123@email.com'&&senhaaluno=='12345'){
+      window.location.replace("http://127.0.0.1:5500/aluno.html")
+    }
     else{
 
       const xhttp = new XMLHttpRequest();
@@ -151,6 +154,42 @@
       return true
     }
   }
+  function valida_empresa(){
+    
+    var emailempresa = document.getElementById("emailempresa");
+    var senhaempresa = document.getElementById("senhaempresa");
+    var erro_aluno = document.getElementById("erro_aluno");
+
+    if(emailempresa.value.length <=3 || senhaempresa.value.length <=3){
+      erro_aluno.style.display = "inline-block";
+      emailaluno.style.border = "1px solid #f74040"
+      senhaaluno.style.border = "1px solid #f74040"
+      return false;
+    }
+    else if(emailempresa=='123@email.com'&&senhaempresa=='12345'){
+      window.location.replace("http://127.0.0.1:5500/empresa.html")
+    }
+    else{
+
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function(){
+        document.getElementById("demo").innerHTML = "Login Feito!"
+      }
+      xhttp.open("POST", "http://localhost:8080/aluno");
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.send(
+          JSON.stringify(
+            {
+              emailaluno: document.getElementById("emailaluno").value,
+              senhaaluno: document.getElementById("senhaaluno").value
+            }
+          )
+      ) 
+      window.location = "aluno.html";
+      return true
+    }
+  }
+
 
 </script>
 </body>  
